@@ -11,12 +11,13 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const frontendUrl = process.env.FRONTEND_URL;
+const allowedOrigins = ['https://finova-phi.vercel.app'];
 
 const corsOptions = {
-  origin: frontendUrl,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: allowedOrigins,
+  credentials: true, 
 };
+
 app.use(cors(corsOptions));
 
 app.use('/api/auth', authRoutes);
