@@ -1,0 +1,280 @@
+.story-container {
+    position: relative;
+    width: 50%;
+    height: 300px;
+   
+    margin: 0px ;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Each card is absolutely positioned and hidden by default */
+.story-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.story-card.active {
+    opacity: 1;
+}
+
+/* --------------------------------------------------
+BACKGROUND CIRCLES (inspired by Spotify Wrapped)
+----------------------------------------------------- */
+.bg-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    animation: moveCircle 6s ease-in-out infinite;
+}
+
+/* Position & size of various circles */
+.circle.c1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.circle.c2 {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.circle.c3 {
+    width: 60px;
+    height: 60px;
+    top: 80%;
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.circle.c4 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.circle.c5 {
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    left: 20%;
+    animation-delay: 2.5s;
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(30px, 30px) scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+/* --------------------------------------------------
+TEXT & ITS ANIMATIONS
+----------------------------------------------------- */
+.animated-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.animated-text .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.animated-text .detail {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* --- Animation Keyframes --- */
+/* 1. Slide in from left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-left {
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+/* 2. Slide in from right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-right {
+    animation: slideInRight 1.2s ease-out forwards;
+}
+
+/* 3. Circular entrance (spin + scale) */
+@keyframes circleIn {
+    from {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.animate-circle {
+    animation: circleIn 1.5s ease-out forwards;
+}
+
+/* 4. Floating in from above */
+@keyframes floatIn {
+    0% {
+        transform: translateY(-50px) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-floating {
+    animation: floatIn 1.5s ease-out forwards;
+}
+
+/* 5. Bounce in from bottom */
+@keyframes bounceInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate-bottom {
+    animation: bounceInUp 1.2s ease-out forwards;
+}
+
+/* 6. Simple fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* --------------------------------------------------
+CARD BACKGROUND GRADIENTS (finance-inspired)
+----------------------------------------------------- */
+.storycard1 {
+    background: radial-gradient(circle, #024239, #40e7cb);
+    /* deep navy blue */
+}
+
+.storycard2 {
+    background: radial-gradient(ellipse, #2ecc40, #145A32);
+    /* vibrant green */
+}
+
+.storycard3 {
+    background: radial-gradient(circle, #5848f0, #1c1652);
+    /* rich purple */
+}
+
+.storycard4 {
+    background: radial-gradient(circle, #055108, #7eeb7e);
+    /* shining gold/orange */
+}
+
+.storycard5 {
+    background: radial-gradient(circle, #6a99f6, #0c1e43);
+    /* vivid red */
+}
+
+.storycard6 {
+    background: radial-gradient(circle, #e75be7, #233129);
+    /* bright blue */
+}
+
+.number {
+    font-size: 200px;
+}
+
+.detail {
+    font-size: 20px;
+}

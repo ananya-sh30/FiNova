@@ -1,0 +1,229 @@
+.journal{
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #f8f9fa;
+}
+.initial {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    flex-direction: column;
+}
+.card-graph {
+    width: 50%;
+    background: none;
+    border-radius: 12px;
+    flex:1;
+}
+.card-sugg {
+    width: 50%;
+    background: none;
+    border-radius: 12px;
+    flex:1;
+}
+#week-range {
+    font-size: 20px;
+    color: black;
+    font-weight: lighter;
+}
+
+
+
+.storymood {
+    width: 100%;
+    height: 400px;
+    background: white;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.graphs{
+    display: flex;
+    flex-direction: row;
+}
+.journal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Change to column direction on smaller screens */
+@media (max-width: 768px) {
+    .initial {
+        flex-direction: column;
+       
+    }
+    .graphs{
+        flex-direction: row;
+    }
+    .journal-header{
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 10px auto;
+
+
+}
+
+.avatar {
+    font-size: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.message {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+
+
+#futureSpending {
+    color: #145A32;
+    font-size: 20px;
+
+}
+.future{
+    width:50%;
+}
+.prediction-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ position: relative;
+ 
+    cursor: pointer;
+}
+
+.glowing-sphere {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgb(0, 39, 123) 0%, rgb(64, 103, 201) 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgb(0, 30, 128), 0 0 100px rgb(2, 17, 99);
+    position: relative;
+    animation: glow 1.5s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gas-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 80%);
+    filter: blur(30px);
+    animation: gas-move 6s infinite alternate ease-in-out;
+}
+
+.sparkle-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/best2.gif');
+    /* Sparkles */
+    background-size: cover;
+    opacity: 0.3;
+    animation: sparkle-move 4s infinite alternate ease-in-out;
+}
+
+.wave-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(10px);
+    animation: wave-move 5s infinite alternate ease-in-out;
+}
+
+.predict-text {
+    position: absolute;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 60px rgb(0, 13, 128), 0 0 120px rgb(130, 180, 238);
+    }
+
+    100% {
+        box-shadow: 0 0 80px rgb(0, 45, 128), 0 0 150px rgb(130, 168, 238);
+    }
+}
+
+@keyframes gas-move {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+@keyframes sparkle-move {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes wave-move {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(10px);
+        opacity: 0.4;
+    }
+}
+.final{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+    gap:20px;
+    
+}
