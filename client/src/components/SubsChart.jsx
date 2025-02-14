@@ -1,69 +1,96 @@
 import React from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
-  { month: "Jan", planned: 50, actual: 70 },
-  { month: "Feb", planned: 120, actual: 90 },
-  { month: "Mar", planned: 80, actual: 160 },
-  { month: "Apr", planned: 150, actual: 100 },
-  { month: "May", planned: 110, actual: 190 },
-  { month: "Jun", planned: 180, actual: 130 },
+  { name: "Planned", value: 3000 },
+  { name: "Actual", value: 1350 },
 ];
 
-const SubscriptionBudgetChart = () => {
-  const screenWidth = window.innerWidth;
+const COLORS = ["#007bff", "#4a73a9"]; // Colors for the pie sections
 
+const SubscriptionBudgetPieChart = () => {
   return (
-    <div style={{ width: "96%", height: screenWidth < 600 ? "50px" : "300px", padding: "5px" }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart 
-          data={data} 
-          margin={{ top: 10, right: 10, left: 5, bottom: 5 }}
-        >
-          <defs>
-           
-            <linearGradient id="colorActual" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="rgba(30, 88, 204, 0.5)" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="rgba(0, 13, 39, 0.51)" stopOpacity={0} />
-            </linearGradient>
-          </defs>
-
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
-          <XAxis 
-            dataKey="month" 
-            tickLine={false} 
-            axisLine={false} 
-            tick={{ fontSize: screenWidth < 600 ? 8 : 12 }} 
-          />
-          <YAxis 
-            tickLine={false} 
-            axisLine={false} 
-            tick={{ fontSize: screenWidth < 600 ? 8 : 12 }}
-          />
+    <div
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        padding: "10px",
+        borderRadius: "10px",
+      }}
+    >
+      <ResponsiveContainer width="100%" aspect={1}>
+        <PieChart>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius="40%"
+            outerRadius="70%"
+            fill="#8884d8"
+            paddingAngle={5}
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
           <Tooltip />
-          <Legend wrapperStyle={{ fontSize: screenWidth < 600 ? "8px" : "12px" }} />
-
-          <Area 
-            type="monotone" 
-            dataKey="planned" 
-            stroke="rgba(74, 115, 169, 0.9)" 
-            strokeWidth={screenWidth < 600 ? 1 : 2} 
-            fill="url(#colorPlanned)" 
-            fillOpacity={0.5} 
+          <Legend
+            layout="horizontal"
+            verticalAlign="bottom"
+            align="center"
+            wrapperStyle={{
+              fontSize: "clamp(10px, 2vw, 12px)", // Dynamic font size
+              marginTop: "10px",
+            }}
           />
-
-          <Area 
-            type="monotone" 
-            dataKey="actual" 
-            stroke="#007bff" 
-            strokeWidth={screenWidth < 600 ? 2 : 4} 
-            fill="url(#colorActual)" 
-            fillOpacity={0.5} 
-          />
-        </AreaChart>
+        </PieChart>
       </ResponsiveContainer>
+
+      {/* Center text */}
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          color: "#333",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "clamp(16px, 4vw, 22px)", // Dynamic font size for the value
+            color: "#007bff",
+            fontWeight: "bold",
+          }}
+        >
+          {`₹${data[1].value}`} {/* Highlight actual value */}
+        </div>
+        <div
+          style={{
+            fontSize: "clamp(10px, 2.5vw, 16px)", // Dynamic font size for the label
+            color: "#555",
+          }}
+        >
+          (Actual)
+        </div>
+        <div
+          style={{
+            marginTop: "5px",
+            fontSize: "clamp(12px, 3vw, 13px)", // Dynamic font size for the budget status
+            color: data[1].value > data[0].value ? "#e63946" : "#3c9f3f", // Red for over budget, green otherwise
+          }}
+        >
+          {data[1].value > data[0].value ? "Over Budget" : "Within Budget"}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default SubscriptionBudgetChart;
+export default SubscriptionBudgetPieChart;

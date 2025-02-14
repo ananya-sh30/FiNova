@@ -123,10 +123,10 @@ canvas {
 }
 .monthly-trend {
    
-    width:70%;
     color: rgb(0, 0, 0);
-   
-   height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+      height: 100%;
 }
 
 
@@ -270,3 +270,240 @@ canvas {
     justify-content: center;
     width:50%;
   }
+  .sub-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem auto; /* Center the section */
+    padding: 1rem;
+    border-radius: 16px;
+   
+  }
+  
+  .metric {
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .metric-header h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin: 0;
+  }
+  
+  .metric-icon {
+    font-size: 1.2rem;
+    color: #6c63ff; /* Accent color */
+  }
+  
+  .metric-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    margin-bottom: 6px;
+  }
+  
+  .metric-change {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3c9f3f;
+    background-color: #e9f7ed;
+    padding: 5px 8px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .metric-description {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .metric:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  .metric-tip,
+.metric-insight,
+.metric-progress {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #6c63ff;
+}
+
+.metric-tip {
+  background-color: #f0fcf4;
+  border-left: 4px solid #3c9f3f;
+}
+
+.metric-insight blockquote {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  color: #666;
+}
+
+.metric-progress {
+  background-color: #f9f4ff;
+  border-left: 4px solid #6c63ff;
+}
+
+.metric-chart img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.metric-summary {
+  grid-column: span 2; /* Make this section span across two columns for larger screens */
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-summary h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.metric-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.metric-summary ul li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.metric-summary ul li::before {
+  content: "✔";
+  color: #6c63ff;
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+  top: 0.1rem;
+}
+  @media (max-width: 768px) {
+    .sub-metrics {
+      max-width: 90%; /* Wider width for smaller screens */
+      padding: 1rem;
+    }
+  
+    .metric-number {
+      font-size: 1rem;
+    }
+  
+    .metric-change {
+      font-size: 0.7rem;
+      padding: 4px 6px;
+    }
+  
+    .metric-description {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .metric-header h3 {
+      font-size: 0.8rem;
+    }
+  
+    .metric-icon {
+      font-size: 1rem;
+    }
+  
+    .metric-number {
+      font-size: 0.9rem;
+    }
+  
+    .metric-description {
+      font-size: 0.7rem;
+    }
+  }
+ 
+ 
+  .budget-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+ .divison{
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+      gap:16px;
+      padding: 16px;
+ }
+  @media (min-width: 768px) {
+    .budget-section {
+      flex-direction: row; /* Arrange elements side by side on larger screens */
+      justify-content: space-around;
+    }
+   
+  }
+  
+  .subscriptions-bar {
+    flex: 1; /* Equal space */
+    width: 100%; /* Ensures it spans full width */
+    max-width: 600px;
+  }
+  
+  .pie-chart-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures responsiveness */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .pie-chart-container > div {
+    width: 90%; /* Adjust dynamically based on screen size */
+    max-width: 500px; /* Limit size on larger screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  @media (max-width: 600px) {
+    .pie-chart-container > div {
+      width: 100%; /* Take full width on smaller screens */
+      padding: 0; /* Remove padding to avoid clipping */
+    }
+    .division{
+      grid-template-columns: 1fr; /* Switch to a single-column layout */
+    }
+  }
+  

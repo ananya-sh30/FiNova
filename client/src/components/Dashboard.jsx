@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../styles/App.css";
+import { motion } from "framer-motion";
+
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import "../styles/Dashboard.css";
 import SmartFinance from "./SmartFinance";
 import FinancialTools from "./FinancialTools";
 import InvestmentAdvisor from "./InvestmentAdvisor";
 import FAQ from "./FAQ";
-
+import Footer from "./Footer";
 const data = [
   { name: "Jan", value: 10 },
   { name: "Feb", value: 15 },
@@ -20,6 +22,7 @@ const Dashboard = ({isLoggedIn, userEmail}) => {
 
   return (
     <div className="maindash">
+     
     <div className="dashboard">
     
       <div className="circles">
@@ -126,6 +129,7 @@ const Dashboard = ({isLoggedIn, userEmail}) => {
      
    <InvestmentAdvisor/>
    <FAQ/>
+   <Footer/>
     </div>
 
     
