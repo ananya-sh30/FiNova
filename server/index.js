@@ -11,14 +11,24 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const allowedOrigins = ['https://finova-phi.vercel.app'];
+const allowedOrigins = [
+  'https://finova-phi.vercel.app', 
+  'http://localhost:3000' 
+];
 
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true); 
+    } else {
+      callback(new Error('Not allowed by CORS')); 
+    }
+  },
   credentials: true, 
 };
 
 app.use(cors(corsOptions));
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
