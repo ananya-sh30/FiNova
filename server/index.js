@@ -11,23 +11,18 @@ const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const allowedOrigins = [
-  'https://finova-phi.vercel.app', 
-  'http://localhost:3000' 
-];
+const cors = require('cors');
+
+// Add your Vercel frontend URL here
+const allowedOrigins = ['https://finova-phi.vercel.app'];
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true); 
-    } else {
-      callback(new Error('Not allowed by CORS')); 
-    }
-  },
-  credentials: true, 
+  origin: allowedOrigins,
+  credentials: true, // If you're using cookies or authentication
 };
 
 app.use(cors(corsOptions));
+
 
 
 app.use('/api/auth', authRoutes);
