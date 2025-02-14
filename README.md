@@ -1,4 +1,4 @@
-# Finova
+# Finova 📈 
 
 Finova is an intelligent personal finance management platform designed to simplify financial planning, investment tracking, and wealth management. It empowers users to make informed decisions and achieve their financial goals with ease.
 
