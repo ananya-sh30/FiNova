@@ -25,3 +25,8 @@ Stay updated with financial news, market insights, and educational content tailo
 FinGenie (Chatbot)
 
 AI-powered virtual assistant to help answer financial queries and guide users through the platform.
+Tech Stack
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: PostgresQL
+APIs: Financial market data API integration for real-time updates as widgets
