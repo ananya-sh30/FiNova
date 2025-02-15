@@ -55,7 +55,7 @@ const Dashboard = ({isLoggedIn, userEmail}) => {
               </svg>
               <span className="name"> FiNova</span>
             </h1>
-            <p>Smart Investing, Budgeting, and Credit Monitoring at Your Fingertips</p>
+            <p>Smart Investing, Budgeting, and Expense Monitoring at Your Fingertips</p>
             <div className="get-started-container">
               <input type="email" className="email-input" placeholder="Write your email" />
               <button className="get-started">Get Started</button>
