@@ -139,7 +139,7 @@ const CustomGoal = ({ isLoggedIn, userEmail }) => {
         {currentStep === 1 && (
           <div className="goal-form">
             <h2>Create Your Goal</h2>
-            <div className="form-container">
+            <div className="form-container-goal">
               <div className="form-group">
                 <label htmlFor="goalName">Goal Name</label>
                 <input
