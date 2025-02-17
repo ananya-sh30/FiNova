@@ -15,8 +15,7 @@ app.use(express.json());
 
 // Add your Vercel frontend URL here
 const allowedOrigins = [
-  'https://finova-phi.vercel.app',
-  'http://localhost:3000'
+  'https://finova-phi.vercel.app'
 ];
 
 const corsOptions = {
