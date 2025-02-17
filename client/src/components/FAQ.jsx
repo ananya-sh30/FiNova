@@ -8,16 +8,49 @@ const FAQ = () => {
     setOpenQuestion(openQuestion === id ? null : id);
   };
 
-  const faqs = [
-    { id: "q1", question: "What services do you offer?", answer: "We offer financial planning, investment advice, retirement planning, tax strategies, and risk management services." },
-    { id: "q2", question: "How do I schedule a consultation?", answer: "You can schedule a consultation through our website's contact form or by calling our office directly." },
-    { id: "q3", question: "Do you charge for the initial consultation?", answer: "No, our initial consultation is free of charge to understand your financial needs and how we can assist you." },
-    { id: "q4", question: "How do you ensure my financial information is secure?", answer: "We use industry-standard encryption and secure protocols to protect your financial data." },
-    { id: "q5", question: "What should I bring to my first consultation?", answer: "Please bring financial statements, tax returns, investment details, and any relevant documents to help us understand your financial situation." },
-    { id: "q6", question: "Can you help with tax planning?", answer: "Yes, we offer tax-efficient strategies to help you minimize tax liabilities and optimize your financial plan." },
-    { id: "q7", question: "What is your investment philosophy?", answer: "Our investment approach is tailored to your goals, focusing on diversification, risk management, and long-term growth." },
-    { id: "q8", question: "Do you offer estate planning services?", answer: "Yes, we assist with estate planning to help secure your legacy and ensure your assets are distributed according to your wishes." }
-  ];
+ const faqs = [
+  { 
+    id: "q1", 
+    question: "What tools does Finova provide?", 
+    answer: "Finova offers tools like a Net Worth Calculator, Emergency Fund Calculator, Insurance Needs Calculator, and a Subscription Tracker." 
+  },
+  { 
+    id: "q2", 
+    question: "How does the personalized investment advisory work?", 
+    answer: "Our Smart Wealth Growth feature provides goal-based investment advice tailored to your financial goals, risk tolerance, and duration." 
+  },
+  { 
+    id: "q3", 
+    question: "Is Finova free to use?", 
+    answer: "Finova offers basic features for free, while premium features like advanced analytics and personalized insights may require a subscription." 
+  },
+  { 
+    id: "q4", 
+    question: "How does Finova ensure my data is secure?", 
+    answer: "We use advanced encryption and secure protocols to safeguard your financial information and maintain confidentiality." 
+  },
+  { 
+    id: "q5", 
+    question: "How can I track my expenses using Finova?", 
+    answer: "You can use our Expense Journal to record and analyze your daily spending habits, helping you stay on top of your finances." 
+  },
+  { 
+    id: "q6", 
+    question: "Does Finova provide news and market updates?", 
+    answer: "Yes, Finova’s News and Insights section keeps you informed about the latest financial trends, investment opportunities, and market news." 
+  },
+  { 
+    id: "q7", 
+    question: "What is FinGenie?", 
+    answer: "FinGenie is our AI-powered chatbot designed to answer your financial queries and guide you through the platform's features." 
+  },
+  { 
+    id: "q8", 
+    question: "Can Finova help me plan for emergencies?", 
+    answer: "Yes, our Emergency Fund Calculator helps you determine the optimal amount you need to be prepared for unexpected situations." 
+  }
+];
+
 
   return (
     <div className="container-faq">

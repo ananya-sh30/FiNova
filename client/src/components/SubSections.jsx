@@ -214,10 +214,7 @@ export default function Dashboard() {
                         <p class="metric-number">90%</p>
                         <p class="metric-change">+7% from last month</p>
                         <p class="metric-description">You’re staying ahead of unexpected charges—great job!</p>
-                        <div class="metric-chart">
-                        <p><strong>Trend:</strong></p>
-                        <img src="auto-renewal-trend-chart.png" alt="Trend chart showing increased avoidance of auto-renewals" />
-                        </div>
+                       
                     </div>
                     <div class="metric">
                         <div class="metric-header">
