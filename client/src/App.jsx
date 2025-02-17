@@ -8,6 +8,7 @@ import PersonalFinanceTracker from "./components/CreditScore";
 import NewsInsights from "./components/NewsInsights";
 import Login from "./components/Login";
 import CustomGoal from "./components/CustomGoal";
+import Game from "./components/Game";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -62,6 +63,7 @@ const InnerApp = ({ isLoggedIn, handleLogin, handleLogout, userEmail }) => {
           <Route path="/news-insights" element={<NewsInsights userEmail={userEmail} />} />
           <Route path="/login" element={<Login setUser={handleLogin} />} />
           <Route path="/custom-goal" element={<CustomGoal isLoggedIn={isLoggedIn} userEmail={userEmail}/>} />
+          <Route path="/game" element={<Game isLoggedIn={isLoggedIn} userEmail={userEmail}/>} />
         </Routes>
       </div>
     </div>

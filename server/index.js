@@ -5,16 +5,19 @@ const authRoutes = require('./routes/authRoutes');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
 const goalRoutes = require("./routes/goalRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
+
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json()); 
 
-const cors = require('cors');
 
 // Add your Vercel frontend URL here
-const allowedOrigins = ['https://finova-phi.vercel.app'];
+const allowedOrigins = [
+  'https://finova-phi.vercel.app',
+  'http://localhost:3000'
+];
 
 const corsOptions = {
   origin: allowedOrigins,
@@ -22,8 +25,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-
 
 app.use('/api/auth', authRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
